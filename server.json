@@ -1,0 +1,43 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "si.claimora/claimora",
+  "title": "Claimora",
+  "description": "Scientific and legal claim graph. Query claims, evidence, contradictions, and innovation flags.",
+  "version": "0.1.0",
+  "websiteUrl": "https://github.com/superexposed/claimora-mcp/blob/main/docs/mcp-public.md",
+  "repository": {
+    "url": "https://github.com/superexposed/claimora-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://claimora.si/mcp",
+      "headers": [
+        {
+          "name": "X-Claimora-Paid-Token",
+          "description": "Free tier is 10 calls per day. Paid calls are 0.01 USDC. Token from https://claimora.si/credits.",
+          "isRequired": false,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "_meta": {
+    "io.modelcontextprotocol.registry/publisher-provided": {
+      "name": "claimora",
+      "description": "Structured scientific and legal claim graph. Query claims, evidence, contradictions, and innovation flags.",
+      "url": "https://claimora.si/mcp",
+      "tools": [
+        "query_claims",
+        "get_evidence",
+        "get_contradictions",
+        "get_updates",
+        "get_innovation_flags",
+        "search_smart"
+      ],
+      "pricing": "free tier 10 calls/day; paid 0.01 USDC via X-Claimora-Paid-Token",
+      "docs": "https://github.com/superexposed/claimora-mcp/blob/main/docs/mcp-public.md"
+    }
+  }
+}
